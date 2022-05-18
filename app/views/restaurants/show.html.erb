@@ -1,0 +1,28 @@
+<h1>Restaurants#show</h1>
+<p>Find me in app/views/restaurants/show.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %>
+    <li class="list-group-item"><%= review.rating %>
+  <% end %>
+</ul>
+
+ |
+<%= link_to 'Back', restaurants_path %>
+<div>
+<%= link_to 'Leave a Review', new_restaurant_review_path(@restaurant) %>
+</div>
